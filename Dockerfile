@@ -17,6 +17,9 @@ ENV PHPMYADMIN_SOURCE "/usr/src/phpmyadmin"
 ENV PHPMYADMIN_HOME "/home/phpmyadmin"
 #nginx
 ENV NGINX_LOG_DIR "/home/LogFiles/nginx"
+RUN { \
+      echo 'client_max_body_size 20M;'; \
+    } > /etc/nginx/conf.d/default.conf
 #php
 ENV PHP_HOME "/etc/php/7.0"
 ENV PHP_CONF_DIR $PHP_HOME"/cli"
