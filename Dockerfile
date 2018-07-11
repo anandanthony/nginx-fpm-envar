@@ -24,7 +24,9 @@ COPY nginx.conf /etc/nginx/
 #php
 ENV PHP_HOME "/etc/php/7.0"
 ENV PHP_CONF_DIR $PHP_HOME"/cli"
-ENV PHP_CONF_FILE $PHP_CONF_DIR"/php.ini" 
+ENV PHP_CONF_FILE $PHP_CONF_DIR"/php.ini"
+
+COPY php.ini /etc/php/7.0/fpm/
 
 # ====================
 # Download and Install
